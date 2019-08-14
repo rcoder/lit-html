@@ -53,6 +53,12 @@ declare global {
   }
 }
 
+declare var window: Window;
+
+if (typeof(window) === 'undefined') {
+  window = new Window();
+}
+
 // IMPORTANT: do not change the property name or the assignment expression.
 // This line will be used in regexes to search for lit-html usage.
 // TODO(justinfagnani): inject version number at build time
