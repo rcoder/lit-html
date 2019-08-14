@@ -12,6 +12,7 @@
  * http://polymer.github.io/PATENTS.txt
  */
 
+
 /**
  * @module lit-html
  */
@@ -23,7 +24,8 @@ interface MaybePolyfilledCe extends CustomElementRegistry {
 /**
  * True if the custom elements polyfill is in use.
  */
-export const isCEPolyfill = window.customElements !== undefined &&
+export const isCEPolyfill = typeof(window) !== 'undefined' &&
+    window.customElements !== undefined &&
     (window.customElements as MaybePolyfilledCe).polyfillWrapFlushCallback !==
         undefined;
 
